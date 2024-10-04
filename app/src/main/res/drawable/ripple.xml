@@ -1,0 +1,7 @@
+<!-- res/drawable/generic_ripple.xml -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight"> <!-- Slightly darker overlay -->
+
+    <item android:drawable="?android:attr/selectableItemBackground"/> <!-- Default background -->
+</ripple>
+

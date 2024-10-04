@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activity.MainActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.banktest.viewmodel.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- TextView on the Left -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/brandName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="20dp"
+                android:text="Fintech Bot"
+                android:textSize="40sp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="20sp"
+                app:autoSizeMaxTextSize="40sp"
+                app:autoSizeStepGranularity="2sp"
+                app:layout_constraintEnd_toStartOf="@id/settingsLL"
+                app:layout_constraintHorizontal_bias="0.197"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/settingsLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> viewModel.onSettingsClicked()}">
+
+                <ImageView
+                    android:id="@+id/settingsBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/baseline_settings_24"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- First Wide Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/transferCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topCL"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple"
+            android:onClick="@{() -> viewModel.onTransferClicked()}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/transferName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Transfer Money"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:id="@+id/transferIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/transferName"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/baseline_compare_arrows_24" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Second Wide Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/balanceCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transferCard"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple"
+            android:onClick="@{() -> viewModel.onBalanceClicked()}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/balanceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Balance"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/balanceIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:paddingBottom="5dp"
+                    android:layout_below="@+id/balanceName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/baseline_account_balance_24" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Third Wide Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pensionCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/balanceCard"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple"
+            android:onClick="@{() -> viewModel.onPensionClicked()}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/pensionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pension"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:id="@+id/pensionIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/pensionName"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/baseline_health_and_safety_24" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fourth Wide Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/chatCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pensionCard"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple"
+            android:onClick="@{() -> viewModel.onChatClicked()}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/chatName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Chat"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:id="@+id/chatIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/chatName"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/baseline_chat_24" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

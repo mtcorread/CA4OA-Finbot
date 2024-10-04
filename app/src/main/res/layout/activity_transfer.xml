@@ -1,0 +1,140 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.banktest.viewmodel.TransferViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- RecyclerView for displaying chat messages -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layoutMessage"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/listening_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="#AA000000"
+            android:text="Listening..."
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:textSize="30sp"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="#AA000000"
+            android:text="Loading, please wait..."
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:textSize="30sp"
+            android:visibility="@{viewModel.isLoadingLiveData ? View.VISIBLE : View.GONE}"
+            android:layout_centerInParent="true" />
+
+        <!-- Message input layout -->
+        <LinearLayout
+            android:id="@+id/layoutMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="#AAF2E3F6">
+
+            <!-- Horizontal layout for EditText and Send button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Message input field -->
+                <EditText
+                    android:id="@+id/message_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Type your message"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:textSize="18sp"
+                    android:visibility="visible"/>
+
+                <!-- Send button -->
+                <Button
+                    android:id="@+id/send_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:drawableLeft="@drawable/baseline_send_24"
+                    android:text="@string/send"
+                    android:textSize="18sp"
+                    android:enabled="@{viewModel.isSendSpeakButtonsEnabledLiveData}"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground"/>
+
+                <Button
+                    android:id="@+id/no_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:text="No"
+                    android:textSize="18sp"
+                    android:visibility="@{viewModel.yesNoButtonsVisibleLiveData ? View.VISIBLE : View.GONE}"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground"/>
+
+                <Button
+                    android:id="@+id/yes_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:text="Yes"
+                    android:textSize="18sp"
+                    android:visibility="@{viewModel.yesNoButtonsVisibleLiveData ? View.VISIBLE : View.GONE}"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/button_foreground"/>
+            </LinearLayout>
+
+            <!-- Speak button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/talk_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_background"
+                android:contentDescription="@string/speak"
+                android:text="Tap to Speak"
+                android:textSize="18sp"
+                app:icon="@drawable/baseline_mic_24"
+                app:iconGravity="textStart"
+                android:enabled="@{viewModel.isSendSpeakButtonsEnabledLiveData}"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/button_foreground"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

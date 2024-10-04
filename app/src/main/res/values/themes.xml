@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BankTest" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="cardViewStyle">@style/CardViewStyle_MainMenu</item>
+        <item name="android:textViewStyle">@style/TextColor_General</item>
+        <item name="android:windowBackground">#fef7fe</item> <!-- Directly set the color here -->
+        <item name="vectorFillColor">#000000</item> <!-- Different color for dark theme -->
+        <item name="showMoreTextColor">@color/black</item> <!-- Assuming @color/black is defined -->
+        <item name="radioButtonStyle">@style/RadioButtonTextStyle</item> <!-- Assuming @color/black is defined -->
+
+
+    </style>
+
+    <style name="Base.Theme.BankTest_Dark" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="cardViewStyle">@style/CardViewStyle_MainMenu_Dark</item>
+        <item name="android:textViewStyle">@style/TextColor_General_Dark</item>
+        <item name="android:windowBackground">#232830</item> <!-- Directly set the color here -->
+        <item name="vectorFillColor">#FFFFFF</item> <!-- Different color for dark theme -->
+        <item name="showMoreTextColor">@color/white</item> <!-- Assuming @color/black is defined -->
+        <item name="radioButtonStyle">@style/RadioButtonTextStyle_Dark</item> <!-- Assuming @color/black is defined -->
+
+
+    </style>
+
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:background="@android:color/transparent"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/amountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-£0.00"
+            android:textSize="40sp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="#D0585B"
+            android:layout_marginBottom="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/recipientNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Recipient"
+            android:gravity="start"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/actualNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Name"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/accountNumberTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Account number"
+            android:gravity="start"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/actualAccountNumberTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="00000000"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/sortCodeTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Sort code"
+            android:gravity="start"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/actualSortCodeTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="00-00-00"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/TimeTransactionTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Time of transaction"
+            android:gravity="start"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/actualTimeTransactionTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="00000000"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

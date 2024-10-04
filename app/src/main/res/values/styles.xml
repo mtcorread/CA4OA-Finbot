@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CardViewStyle_MainMenu_Dark" parent="CardView">
+        <item name="cardBackgroundColor">#272d35</item>
+    </style>
+
+    <style name="TextColor_General_Dark" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CardViewStyle_MainMenu" parent="CardView">
+        <item name="cardBackgroundColor">#FFFFFF</item>
+    </style>
+
+    <style name="TextColor_General" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#414141</item>
+    </style>
+
+    <style name="RadioButtonTextStyle_Dark" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="RadioButtonTextStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">#414141</item>
+    </style>
+
+</resources>
